@@ -2,12 +2,12 @@ import { isNullOrUndef } from "../is";
 
 class Storage {
     constructor(option) {
-        this.option = option.storage
+        this.storage = option.storage
         this.prefixKey = option.prefixKey
     }
 
     getKey(key) {
-        retun`${this.prefixKey}${key}`.toUpperCase()
+        return `${this.prefixKey}${key}`.toUpperCase()
     }
 
     set(key, value, expire) {

@@ -1,7 +1,7 @@
 import { resolveToken } from "../utils";
 
 const token = {
-    admim: 'admin'
+    admin: 'admin'
 }
 
 export default [
@@ -10,6 +10,9 @@ export default [
         method: 'post',
         response: ({ body }) => {
             if (['admin'].includes(body?.name)) {
+                /* console.log(token)
+                console.log(body.name)
+                console.log(token[body.name]) */
                 return {
                     code: 0,
                     data: {
@@ -31,7 +34,7 @@ export default [
             return {
                 code: 0,
                 data: {
-                    token: resolveToken(headers?.auth)
+                    token: resolveToken(headers?.authorization)
                 }
             }
         }

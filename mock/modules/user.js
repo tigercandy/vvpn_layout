@@ -6,6 +6,12 @@ const users = {
         name: 'admin',
         email: 'admin@163.com',
         role: ['admin'],
+    },
+    guest: {
+        id: 2,
+        name: 'guest',
+        email: 'guest@163.com',
+        role: []
     }
 }
 export default [

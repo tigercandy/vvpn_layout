@@ -1,7 +1,7 @@
 import { isNullOrUndef } from "@/utils/is";
-import { toLogin } from "../auth";
-import { getToken } from "../token";
-import { isWithoutToken } from "./helpers";
+import { toLogin } from "@/utils/auth";
+import { getToken } from "@/utils/token";
+import { isWithoutToken } from "@/utils/http/helpers";
 
 
 export function reqResolve(config) {
@@ -19,7 +19,7 @@ export function reqResolve(config) {
         return Promise.reject({ code: -1, msg: '未登录' })
     }
 
-    config.headers.Authorization = config.headers.Authorization || 'Bearer' + token
+    config.headers.Authorization = config.headers.Authorization || 'Bearer ' + token
 
     return config
 }

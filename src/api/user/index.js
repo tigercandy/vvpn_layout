@@ -1,4 +1,4 @@
-import { defAxios as request } from "../../utils/http";
+import { defAxios as request } from "@/utils/http";
 
 export function getUsers(data = {}) {
     return request({
@@ -9,8 +9,29 @@ export function getUsers(data = {}) {
 }
 
 export function getUser(id) {
+    if (id) {
+        return request({
+            url: `/user/${id}`,
+            method: 'get',
+        })
+    }
     return request({
-        url: '/user/${id}',
-        method: 'get',
+        url: '/user',
+        method: 'get'
+    })
+}
+
+export function saveUser(id, data = {}) {
+    if (id) {
+        return request({
+            url: '/user',
+            method: 'put',
+            data
+        })
+    }
+    return request({
+        url: `/user/${id}`,
+        method: 'post',
+        data
     })
 }

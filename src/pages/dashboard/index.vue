@@ -18,13 +18,13 @@
         </li>
       </ul>
   
-      <n-button type="info" mt-20 size="small" @click="logout">换个角色看看</n-button>
+      <n-button type="info" mt-20 size="small" @click="logout">退出登录</n-button>
     </div>
   </template>
   
   <script setup>
-  import { usePermissionStore } from '../../store/modules/permission'
-  import { useUserStore } from '../../store/modules/user'
+  import { usePermissionStore } from '@/store/modules/permission'
+  import { useUserStore } from '@/store/modules/user'
   
   const permissionStore = usePermissionStore()
   const userStore = useUserStore()

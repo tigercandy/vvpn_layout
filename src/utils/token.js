@@ -8,9 +8,9 @@ export function getToken() {
 }
 
 export function setToken(token) {
-    return lStorage.set(TOKEN_KEY, token, DURATION)
+    lStorage.set(TOKEN_KEY, token, DURATION)
 }
 
 export function removeToken() {
-    return lStorage.remove(TOKEN_KEY)
+    lStorage.remove(TOKEN_KEY)
 }

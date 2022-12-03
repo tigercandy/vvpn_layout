@@ -68,6 +68,7 @@ async function handleLogin() {
             } else {
                 lStorage.remove('loginInfo')
             }
+            console.log('登录成功跳转')
             router.push('/')
         } else {
             $message.warning(res.message)

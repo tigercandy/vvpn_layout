@@ -19,7 +19,7 @@ export const basicRoutes = [
     {
         name: '404',
         path: '/404',
-        component: () => import('@/pages/error-pages/404.vue'),
+        component: () => import('@/pages/error-page/404.vue'),
         isHidden: true
     }
 ]
