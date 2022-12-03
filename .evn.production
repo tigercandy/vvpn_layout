@@ -1,0 +1,2 @@
+# 公共资源路径
+VITE_PUBLIC_PATH = '/'
