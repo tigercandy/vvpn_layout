@@ -18,29 +18,29 @@ import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import { configMockPlugin } from './mock'
 
 export function createVitePlugins(viteEnv, isBuild) {
-    const plugins = [
-        vue(),
-        VueSetupExtend(),
-        configHtmlPlugin(viteEnv, isBuild),
-        unocss(),
-        Components({
-            resolvers: [NaiveUiResolver()]
-        })
-    ]
+  const plugins = [
+    vue(),
+    VueSetupExtend(),
+    configHtmlPlugin(viteEnv, isBuild),
+    unocss(),
+    Components({
+      resolvers: [NaiveUiResolver()],
+    }),
+  ]
 
-    if (isBuild) {
-        plugins.push(
-            visualizer({
-                open: true,
-                gzipSize: true,
-                brotliSize: true,
-            })
-        )
-    }
+  if (isBuild) {
+    plugins.push(
+      visualizer({
+        open: true,
+        gzipSize: true,
+        brotliSize: true,
+      })
+    )
+  }
 
-    if (viteEnv?.VITE_APP_USE_MOCK) {
-        plugins.push(configMockPlugin(isBuild))
-    }
+  if (viteEnv?.VITE_APP_USE_MOCK) {
+    plugins.push(configMockPlugin(isBuild))
+  }
 
-    return plugins
+  return plugins
 }

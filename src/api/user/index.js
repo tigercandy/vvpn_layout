@@ -1,37 +1,37 @@
-import { defAxios as request } from "@/utils/http";
+import { defAxios as request } from '@/utils/http'
 
 export function getUsers(data = {}) {
-    return request({
-        url: '/users',
-        method: 'get',
-        data
-    })
+  return request({
+    url: '/users',
+    method: 'get',
+    data,
+  })
 }
 
 export function getUser(id) {
-    if (id) {
-        return request({
-            url: `/user/${id}`,
-            method: 'get',
-        })
-    }
+  if (id) {
     return request({
-        url: '/user',
-        method: 'get'
+      url: `/user/${id}`,
+      method: 'get',
     })
+  }
+  return request({
+    url: '/user',
+    method: 'get',
+  })
 }
 
 export function saveUser(id, data = {}) {
-    if (id) {
-        return request({
-            url: '/user',
-            method: 'put',
-            data
-        })
-    }
+  if (id) {
     return request({
-        url: `/user/${id}`,
-        method: 'post',
-        data
+      url: '/user',
+      method: 'put',
+      data,
     })
+  }
+  return request({
+    url: `/user/${id}`,
+    method: 'post',
+    data,
+  })
 }
